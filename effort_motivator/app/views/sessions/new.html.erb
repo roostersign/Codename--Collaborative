@@ -1,4 +1,28 @@
-<h1>Sign in</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<style type = "text/css">
+body
+{
+font-family: Century Gothic, sans-serif;
+background-color:#ffffcc;
+}
+
+#content {
+  background-color: white;
+  border: 3px solid gold;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+  width: 500px;
+}
+</style>
+</head>
+<body>
+  <div id="content">
+
+<h1>Sign in!</h1>
 
 <div class="row">
   <div class="span6 offset3">
@@ -7,13 +31,22 @@
       <%= f.label :name %>
       <%= f.text_field :name %>
 
+	<br />
+
       <%= f.label :password %>
       <%= f.password_field :password %>
 
+	<br />
+
       <%= radio_button_tag(:type, 1) %>
       <%= label_tag(:type_student, "Student") %>
-      <%= radio_button_tag(:type, 0) %>
+
+	<br />
+	
+	<%= radio_button_tag(:type, 0) %>
       <%= label_tag(:type_adult, "Teacher") %>
+
+	<br />
 
       <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
     <% end %>
@@ -22,3 +55,5 @@
     <p>New Teacher? <%= link_to "Sign up now!", signupt_path %></p>
   </div>
 </div>
+</body>
+</html>
