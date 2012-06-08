@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120608061149) do
+ActiveRecord::Schema.define(:version => 20120608020814) do
 
   create_table "games", :force => true do |t|
     t.string   "name"
@@ -37,9 +37,13 @@ ActiveRecord::Schema.define(:version => 20120608061149) do
     t.text     "profile"
     t.integer  "coins"
     t.integer  "group_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "remember_token"
+    t.string   "password_digest"
   end
+
+  add_index "students", ["remember_token"], :name => "index_students_on_remember_token"
 
   create_table "teachers", :force => true do |t|
     t.string   "name"
@@ -47,8 +51,11 @@ ActiveRecord::Schema.define(:version => 20120608061149) do
     t.string   "pic"
     t.text     "profile"
     t.float    "cash"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "remember_token"
   end
+
+  add_index "teachers", ["remember_token"], :name => "index_teachers_on_remember_token"
 
 end
