@@ -14,7 +14,10 @@ module SessionsHelper
   end
 
   def current_user
-    @current_user ||= User.find_by_remember_token(cookies[:remember_token])
+    @current_user ||= Student.find_by_remember_token(cookies[:remember_token])
+    if !@current_user 
+      @current_user ||= Teacher.find_by_remember_token(cookies[:remember_token])
+    end
   end
 
   def sign_out
