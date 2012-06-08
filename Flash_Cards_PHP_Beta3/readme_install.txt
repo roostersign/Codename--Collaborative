@@ -1,0 +1,1 @@
+Notes: To install: Extract to a blank folder on your PHP web server. Ensure that you have write permission for that folder, then point your web browser to the index.php file. That's it! Enjoy! 

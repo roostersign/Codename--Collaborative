@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- SoundManager Flash configuration -->
+<!-- Sound IDs are referenced from JS -->
+
+<items baseHref="audio/" defaultVol="100">
+
+ <sound id="win" href="win.mp3" />
+ <sound id="beep" href="beep.mp3" />
+ <sound id="lose" href="lose.mp3" />
+ <sound id="smash2" href="glass2.mp3" />
+
+</items>
