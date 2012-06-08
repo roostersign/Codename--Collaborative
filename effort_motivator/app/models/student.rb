@@ -1,7 +1,6 @@
 class Student < ActiveRecord::Base
   belongs_to :group
 
-
   has_secure_password
 
   before_save :create_remember_token

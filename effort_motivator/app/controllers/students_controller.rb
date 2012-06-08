@@ -41,15 +41,12 @@ class StudentsController < ApplicationController
   # POST /students.json
   def create
     @student = Student.new(params[:student])
-
-    respond_to do |format|
-      if @student.save
-        format.html { redirect_to @student, notice: 'Student was successfully created.' }
-        format.json { render json: @student, status: :created, location: @student }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
-      end
+    if @student.save
+      sign_in @student
+      flash[:success] = "Welcome!"
+      redirect_to @student
+    else
+      render 'new'
     end
   end
 
