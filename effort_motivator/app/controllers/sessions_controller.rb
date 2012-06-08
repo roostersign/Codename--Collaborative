@@ -17,7 +17,8 @@ class SessionsController < ApplicationController
     else
       teacher = Teacher.find_by_name(params[:session][:name])
       if teacher && teacher.authenticate(params[:session][:password])
-        # Sign the user in and redirect to the user's show page.
+        sign_in teacher
+	redirect_to teacher
       else
         flash.now[:error] = 'Invalid email/password combination'
         render 'new'

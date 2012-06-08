@@ -1,7 +1,12 @@
 class Teacher < ActiveRecord::Base
   has_many :groups
   
+  has_secure_password
+
   before_save :create_remember_token
+
+  validates : name, presence: true, length: { maximum: 50 }
+  validates : password, presence: true, length: { minimum: 6}
 
   private 
   
